@@ -1,18 +1,14 @@
 import { test, expect } from '@playwright/test';
+import { HomePage } from '../pages/HomePage';
 
-test('has title', async ({ page }) => {
-  await page.goto('');
+test.describe('Check Watch TV App on Home Page', () => {
+  test('Check Watch TV App is visible on Home Page', async ({ page }) => {
+    const homePage = new HomePage(page);
 
-  // Expect a title "to contain" a substring.
-  await expect(page.getByTestId('Watch TV')).toBeVisible();
-});
+    await test.step('Open Home Page', async () => {
+      await homePage.openPage();
+    });
 
-test('get started link', async ({ page }) => {
-  await page.goto('');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+    await expect(homePage.watchTvApp, 'Watch TV App is not visible').toBeVisible();
+    });
 });
