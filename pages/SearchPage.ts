@@ -33,10 +33,10 @@ export class SearchPage extends BasePage {
     }
 
     async expectSearchBarIsFocused(): Promise<void> {
-        await expect(this.searchBar).toHaveAttribute('data-focused', 'focused');
+        await expect(this.searchBar, 'Search bar is not focused').toHaveAttribute('data-focused', 'focused');
     }
 
     async expectSearchBarContainsCategoryName(): Promise<void> {
-        await expect(this.searchBarInput).toHaveAttribute('value', 'Action');
+        await expect(this.searchBarInput, 'Search bar does not contain category name').toHaveAttribute('value', 'Action');
     }
 }
