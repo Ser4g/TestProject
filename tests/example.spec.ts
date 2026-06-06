@@ -6,9 +6,14 @@ test.describe('Check Watch TV App on Home Page', () => {
     const homePage = new HomePage(page);
 
     await test.step('Open Home Page', async () => {
-      await homePage.openPage();
+      await homePage.navigate();
+      await homePage.expectWatchTvIsFocused();
     });
 
-    await expect(homePage.watchTvApp, 'Watch TV App is not visible').toBeVisible();
+    await test.step('Open Search Page and make Search category Action', async () => {
+      const searchPage = await homePage.openSearchPage();
+      await searchPage.expectActionCategoryVisible();
+      
     });
+  });
 });

@@ -1,14 +1,13 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
-export class BasePage {
-    playwrightPage: Page;
+export abstract class BasePage {
+    protected readonly playwrightPage: Page;
 
     constructor(page: Page) {
         this.playwrightPage = page;
     }
 
-    async openPage(): Promise<this> {
+    async navigate(): Promise<void> {
         await this.playwrightPage.goto('');
-        return this;
     } 
 }
