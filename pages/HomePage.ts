@@ -1,15 +1,16 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import { BasePage } from './BasePage';
-import { SearchPage } from './SearchPage';
 
 export class HomePage extends BasePage {
     private readonly watchTvApp: Locator;
     private readonly searchMenuItem: Locator;
+    private readonly channelMenuItem: Locator;
     
     constructor(page: Page) {
         super(page);
         this.watchTvApp = page.getByTestId('Watch TV');
         this.searchMenuItem = page.getByTestId('main-menu-item-0').getByRole('menuitem');
+        this.channelMenuItem = page.getByTestId('main-menu-item-3').getByRole('menuitem');
     }
 
     async navigateToSearchPage(): Promise<void> {
@@ -18,8 +19,19 @@ export class HomePage extends BasePage {
         await this.playwrightPage.keyboard.press('ArrowLeft');
     }
 
+    async navigateToChannelPage(): Promise<void> {
+        await this.playwrightPage.keyboard.press('ArrowUp');
+        await this.playwrightPage.keyboard.press('ArrowUp');
+        await this.playwrightPage.keyboard.press('ArrowRight');
+        await this.playwrightPage.keyboard.press('ArrowRight');
+    }
+
     async expectSearchMenuItemIsFocused(): Promise<void> {
         await expect(this.searchMenuItem, 'Search menu item is not focused').toHaveAttribute('data-focused', 'focused');
+    }
+
+    async expectChannelMenuItemIsFocused(): Promise<void> {
+        await expect(this.channelMenuItem, 'Channel menu item is not focused').toHaveAttribute('data-focused', 'focused');
     }
     
     async expectWatchTvIsFocused(): Promise<void> {

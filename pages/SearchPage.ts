@@ -6,14 +6,14 @@ export class SearchPage extends BasePage {
     private readonly searchBar: Locator;
     private readonly searchBarInput: Locator;
     private readonly actionCategory: Locator;
-    private readonly expectedUrl: string;
+    private readonly expectedSearchActionCategoryUrl: string;
 
     constructor(page: Page) {
         super(page);
         this.searchBar = page.locator('#search-input');
         this.searchBarInput = this.searchBar.getByRole('textbox', { name: 'Search Movies, Shows, Apps' });
         this.actionCategory = page.getByTestId('action');
-        this.expectedUrl = page.url() + SEARCH_ACTION_CATEGORY_URL;
+        this.expectedSearchActionCategoryUrl = page.url() + SEARCH_ACTION_CATEGORY_URL;
     }
 
     async fillSearchBarActionCategory(): Promise<void> {
@@ -25,7 +25,7 @@ export class SearchPage extends BasePage {
     }
 
     async expectSearchUrlForActionCategory(): Promise<void> {
-        await expect(this.playwrightPage, 'URL is not correct').toHaveURL(this.expectedUrl);
+        await expect(this.playwrightPage, 'URL is not correct').toHaveURL(this.expectedSearchActionCategoryUrl);
     }
 
     async expectActionCategoryVisible(): Promise<void> {
