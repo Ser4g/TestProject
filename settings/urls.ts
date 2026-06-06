@@ -1,0 +1,1 @@
+export const SEARCH_ACTION_CATEGORY_URL = 'search?q=Action&type=movie';

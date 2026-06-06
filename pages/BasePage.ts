@@ -10,4 +10,8 @@ export abstract class BasePage {
     async navigate(): Promise<void> {
         await this.playwrightPage.goto('');
     } 
+
+    async clickItem(): Promise<void> {
+        await this.playwrightPage.keyboard.press('Enter');
+    }
 }
