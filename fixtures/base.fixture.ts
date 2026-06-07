@@ -20,7 +20,7 @@ export const test = base.extend<TestFixtures>({
 
     channelPage: async ({ page }, use) => {
         const homePage = new HomePage(page);
-        await homePage.navigate();
+        await homePage.navigateToHomePage();
         await homePage.expectWatchTvIsFocused();
         await homePage.navigateToChannelPage();
         await homePage.expectChannelMenuItemIsFocused();

@@ -3,7 +3,7 @@ import { test } from '../fixtures/base.fixture';
 test.describe('Open Category from Search Page', () => {
 
   test.beforeEach(async ({ homePage }) => {
-    await homePage.navigate();
+    await homePage.navigateToHomePage();
     await homePage.expectWatchTvIsFocused();
     await homePage.navigateToSearchPage();
     await homePage.expectSearchMenuItemIsFocused();

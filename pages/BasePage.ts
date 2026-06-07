@@ -7,7 +7,7 @@ export abstract class BasePage {
         this.playwrightPage = page;
     }
 
-    async navigate(): Promise<void> {
+    async navigateToHomePage(): Promise<void> {
         await this.playwrightPage.goto('');
     } 
 
