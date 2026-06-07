@@ -1,11 +1,12 @@
 import {test as base, Page} from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { SearchPage } from '../pages/SearchPage';
+import { ChannelPage } from '../pages/ChannelPage';
 
 type TestFixtures = {
     homePage: HomePage;
     searchPage: SearchPage;
-    openChannelPage: Page;
+    channelPage: ChannelPage;
 };
 
 export const test = base.extend<TestFixtures>({
@@ -17,7 +18,7 @@ export const test = base.extend<TestFixtures>({
         await use(new SearchPage(page));
     },
 
-    openChannelPage: async ({ page }, use) => {
+    channelPage: async ({ page }, use) => {
         const homePage = new HomePage(page);
         await homePage.navigate();
         await homePage.expectWatchTvIsFocused();
@@ -25,7 +26,6 @@ export const test = base.extend<TestFixtures>({
         await homePage.expectChannelMenuItemIsFocused();
         const popupPromise = page.waitForEvent('popup');
         await homePage.clickItem();
-        const newPage = await popupPromise;
-        await use(newPage);
+        await use(new ChannelPage(await popupPromise));
     }
 });
