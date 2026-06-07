@@ -28,6 +28,7 @@ export class SearchPage extends BasePage {
         await expect(this.playwrightPage, 'URL is not correct').toHaveURL(this.expectedSearchActionCategoryUrl);
     }
 
+    //Timeout is increased because of incorrect API_TOKEN.
     async expectActionCategoryVisible(): Promise<void> {
         await expect(this.actionCategory, 'Action category is not visible').toBeVisible({ timeout: 30_000 });
     }
