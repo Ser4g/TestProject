@@ -11,6 +11,10 @@ export abstract class BasePage {
         await this.playwrightPage.goto('');
     } 
 
+    async navigateBack(): Promise<void> {
+        await this.playwrightPage.keyboard.press('Backspace');
+    }
+
     async clickItem(): Promise<void> {
         await this.playwrightPage.keyboard.press('Enter');
     }
