@@ -27,14 +27,14 @@ export class HomePage extends BasePage {
     }
 
     async expectSearchMenuItemIsFocused(): Promise<void> {
-        await expect(this.searchMenuItem, 'Search menu item is not focused').toHaveAttribute('data-focused', 'focused');
+        await expect(this.searchMenuItem, 'Search menu item should be focused').toHaveAttribute('data-focused', 'focused');
     }
 
     async expectChannelMenuItemIsFocused(): Promise<void> {
-        await expect(this.channelMenuItem, 'Channel menu item is not focused').toHaveAttribute('data-focused', 'focused');
+        await expect(this.channelMenuItem, 'Channel menu item should be focused').toHaveAttribute('data-focused', 'focused');
     }
     //Timeout is increased because of incorrect API_TOKEN.
     async expectWatchTvIsFocused(): Promise<void> {
-        await expect(this.watchTvApp, 'Watch TV App is not focused').toHaveAttribute('data-focused', 'focused', { timeout: 30_000 });
+        await expect(this.watchTvApp, 'Watch TV App should be focused').toHaveAttribute('data-focused', 'focused', { timeout: 30_000 });
     }
 }

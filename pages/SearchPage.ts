@@ -25,19 +25,19 @@ export class SearchPage extends BasePage {
     }
 
     async expectSearchUrlForActionCategory(): Promise<void> {
-        await expect(this.playwrightPage, 'URL is not correct').toHaveURL(this.expectedSearchActionCategoryUrl);
+        await expect(this.playwrightPage, 'URL should contain action category').toHaveURL(this.expectedSearchActionCategoryUrl);
     }
 
     //Timeout is increased because of incorrect API_TOKEN.
     async expectActionCategoryVisible(): Promise<void> {
-        await expect(this.actionCategory, 'Action category is not visible').toBeVisible({ timeout: 30_000 });
+        await expect(this.actionCategory, 'Action category should be visible').toBeVisible({ timeout: 30_000 });
     }
 
     async expectSearchBarIsFocused(): Promise<void> {
-        await expect(this.searchBar, 'Search bar is not focused').toHaveAttribute('data-focused', 'focused');
+        await expect(this.searchBar, 'Search bar should be focused').toHaveAttribute('data-focused', 'focused');
     }
 
     async expectSearchBarContainsCategoryName(): Promise<void> {
-        await expect(this.searchBarInput, 'Search bar does not contain category name').toHaveAttribute('value', 'Action');
+        await expect(this.searchBarInput, 'Search bar should contain category name').toHaveAttribute('value', 'Action');
     }
 }

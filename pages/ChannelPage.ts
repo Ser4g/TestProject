@@ -12,11 +12,11 @@ export class ChannelPage extends BasePage {
     }
 
     async expectChannelMenuIsVisible(): Promise<void> {
-        await expect(this.channelMenu, 'Channel menu is not visible').toBeVisible();
+        await expect(this.channelMenu, 'Channel menu should be visible').toBeVisible();
     }
 
     async expectPlayerOverlayIsVisible(): Promise<void> {
-        await expect(this.playerOverlay, 'Player overlay is not visible').toBeVisible();
+        await expect(this.playerOverlay, 'Player overlay should be visible').toBeVisible();
     }
 
 
