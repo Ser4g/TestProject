@@ -4,10 +4,9 @@
 
 For run tests it is necessary to install Node.JS (https://nodejs.org/en/download)
 
-After install Node.JS execute next command:
+After install Node.JS copy this Project and execute next command from folder where project is located (this command install all dependencies) :
 
 - `npm i`
-- `npx playwright install`
 
 # Environment variables
 
@@ -26,14 +25,16 @@ For run test you can use next command:
 
 - `npx playwright test`
 
- It's necessary run this command from folder where project is located. 
+It's necessary run this command from folder where project is located. 
 
 You can also run tests with the VS Code Extension (https://playwright.dev/docs/getting-started-vscode).
 
 # Reporting
 
+If some tests was failed report opens automatically.  
+
 After tests completed you can find html report in the folder - .\playwright-report 
 
-Also you can run report using next command:
+Also you can run last report using next command:
 
 - `npx playwright show-report`
