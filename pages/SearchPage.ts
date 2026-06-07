@@ -11,7 +11,7 @@ export class SearchPage extends BasePage {
     constructor(page: Page) {
         super(page);
         this.searchBar = page.locator('#search-input');
-        this.searchBarInput = this.searchBar.getByRole('textbox', { name: 'Search Movies, Shows, Apps' });
+        this.searchBarInput = this.searchBar.getByRole('textbox');
         this.actionCategory = page.getByTestId('action');
         this.expectedSearchActionCategoryUrl = page.url() + SEARCH_ACTION_CATEGORY_URL;
     }
