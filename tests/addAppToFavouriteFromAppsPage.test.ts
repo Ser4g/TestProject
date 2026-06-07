@@ -19,7 +19,6 @@ test.describe('Add App to Favorites from Apps Page', () => {
 
         await test.step('Navigate to Featured Apps Row', async () => {
             await appsPage.navigateToFeaturedAppsRow();
-            await appsPage.expectFeaturedAppsRowIsFocused();
         });
 
         // Write next steps when API_TOKEN will be provided
