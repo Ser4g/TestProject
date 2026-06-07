@@ -31,7 +31,7 @@ export const test = base.extend<TestFixtures>({
         await homePage.navigateToChannelPage();
         await homePage.expectChannelMenuItemIsFocused();
         const popupPromise = page.waitForEvent('popup');
-        await homePage.clickItem();
+        await homePage.pressItem();
         await use(new ChannelPage(await popupPromise));
     }
 });

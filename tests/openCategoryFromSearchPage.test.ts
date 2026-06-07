@@ -7,7 +7,7 @@ test.describe('Open Category from Search Page', () => {
     await homePage.expectWatchTvIsFocused();
     await homePage.navigateToSearchPage();
     await homePage.expectSearchMenuItemIsFocused();
-    await homePage.clickItem();
+    await homePage.pressItem();
   });
 
   test('Choose category Action on Search Page', async ({ searchPage }) => {
@@ -18,7 +18,7 @@ test.describe('Open Category from Search Page', () => {
 
     await test.step('Navigate to Action Category', async () => {
       await searchPage.navigateToActionCategory();
-      await searchPage.clickItem();
+      await searchPage.pressItem();
     });
 
     await test.step('Check Action Category is opened', async () => {
@@ -36,7 +36,7 @@ test.describe('Open Category from Search Page', () => {
 
     await test.step('Fill Search Bar with Action', async () => {
       await searchPage.fillSearchBarActionCategory();
-      await searchPage.clickItem();
+      await searchPage.pressItem();
     });
 
     await test.step('Check Action Category is opened', async () => {

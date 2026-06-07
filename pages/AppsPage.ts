@@ -17,7 +17,7 @@ export class AppsPage extends BasePage {
     }
 
     // Write this method when API_TOKEN will be provided
-    async clickOnAddToFavoritesButton(): Promise<void> { }
+    async pressOnAddToFavoritesButton(): Promise<void> { }
 
     //Timeout is increased because of incorrect API_TOKEN.
     async expectFeaturedAppsRowIsVisible(): Promise<void> {

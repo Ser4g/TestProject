@@ -15,7 +15,7 @@ export abstract class BasePage {
         await this.playwrightPage.keyboard.press('Backspace');
     }
 
-    async clickItem(): Promise<void> {
+    async pressItem(): Promise<void> {
         await this.playwrightPage.keyboard.press('Enter');
     }
 }

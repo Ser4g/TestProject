@@ -6,6 +6,7 @@ export class HomePage extends BasePage {
     private readonly searchMenuItem: Locator;
     private readonly channelMenuItem: Locator;
     private readonly appsMenuItem: Locator;
+    private readonly removeAppControl: Locator;
     
     constructor(page: Page) {
         super(page);
@@ -13,6 +14,7 @@ export class HomePage extends BasePage {
         this.searchMenuItem = page.getByTestId('main-menu-item-0').getByRole('menuitem');
         this.channelMenuItem = page.getByTestId('main-menu-item-3').getByRole('menuitem');
         this.appsMenuItem = page.getByTestId('main-menu-item-7').getByRole('menuitem');
+        this.removeAppControl = page.getByTestId('editmode-remove-app');
     }
 
     async navigateToSearchPage(): Promise<void> {
@@ -37,6 +39,22 @@ export class HomePage extends BasePage {
         await this.playwrightPage.keyboard.press('ArrowRight');
         await this.playwrightPage.keyboard.press('ArrowRight');
         await this.playwrightPage.keyboard.press('ArrowRight');
+    }
+
+    async pressOnAppForEditControls(): Promise<void> {
+        await this.playwrightPage.keyboard.down('Enter');
+    }
+
+    async releaseEnterKey(): Promise<void> {
+        await this.playwrightPage.keyboard.up('Enter');
+    }
+
+    async expectRemoveAppControlIsNotFocused(): Promise<void> {
+        await expect(this.removeAppControl, 'Remove app control should not be focused').not.toHaveAttribute('data-focused', 'focused');
+    }
+
+    async expectRemoveAppControlIsFocused(): Promise<void> {
+        await expect(this.removeAppControl, 'Remove app control should be focused').toHaveAttribute('data-focused', 'focused');
     }
 
     async expectSearchMenuItemIsFocused(): Promise<void> {
