@@ -6,8 +6,8 @@ For run tests it is necessary to install Node.JS (https://nodejs.org/en/download
 
 After install Node.JS execute next command:
 
-- 'npm i'
-- 'npx playwright install'
+- `npm i`
+- `npx playwright install`
 
 # Environment variables
 
@@ -24,7 +24,7 @@ baseURL=<Write your full URL for example https://test.test>
 
 For run test you can use next command:
 
-- 'npx playwright test'
+- `npx playwright test`
 
  It's necessary run this command from folder where project is located. 
 
@@ -36,4 +36,4 @@ After tests completed you can find html report in the folder - .\playwright-repo
 
 Also you can run report using next command:
 
-- 'npx playwright show-report'
+- `npx playwright show-report`
