@@ -38,3 +38,18 @@ After tests completed you can find html report in the folder - .\playwright-repo
 Also you can run last report using next command:
 
 - `npx playwright show-report`
+
+# Project Structure
+```
+project-root/
+├── playwright.config.ts               # Playwright configuration
+├── package.json
+├── .env                               # Environment variables (store only locally not present in GitHub)
+├── README.md                          # Main project documentation
+├── tests/                             # Tests
+├── pages/                             # Page Objects
+├── fixtures/                          # Playwright fixtures (https://playwright.dev/docs/test-fixtures)
+└── settings/                          # Settings
+```
+
+
