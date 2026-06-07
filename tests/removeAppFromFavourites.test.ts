@@ -14,6 +14,6 @@ test.describe('Remove App from favourite App Row', () => {
     });
 
     test('Can remove app from favourite App Row', async ({ homePage }) => {
-
+        // Write next steps when API_TOKEN will be provided
     });
 });
