@@ -13,6 +13,7 @@ test.describe('Add App to Favorites from Apps Page', () => {
     test('Add App to Favorites', async ({ appsPage }) => {
 
         await test.step('Wait for Apps Page to load', async () => {
+            await appsPage.expectBannerContentIsVisible();
             await appsPage.expectFeaturedAppsRowIsVisible();
         });
 

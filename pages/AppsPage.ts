@@ -3,10 +3,12 @@ import { BasePage } from './BasePage';
 
 export class AppsPage extends BasePage {
     private readonly featuredAppsRow: Locator;
+    private readonly bannerContent: Locator;
 
     constructor(page: Page) {
         super(page);
         this.featuredAppsRow = page.getByTestId('list-item-app_list-0');
+        this.bannerContent = page.getByTestId('banner-content');
     }
 
     async navigateToFeaturedAppsRow(): Promise<void> {
@@ -24,6 +26,9 @@ export class AppsPage extends BasePage {
 
     async expectFeaturedAppsRowIsFocused(): Promise<void> {
         await expect(this.featuredAppsRow, 'Featured apps row should be focused').toHaveAttribute('data-focused', 'focused');
-
+    }
+    //Timeout is increased because of incorrect API_TOKEN.
+    async expectBannerContentIsVisible(): Promise<void> {
+        await expect(this.bannerContent, 'Banner content should be visible').toBeVisible({ timeout: 30_000 });
     }
 }
