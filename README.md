@@ -48,6 +48,8 @@ project-root/
 ├── README.md                          # Main project documentation
 ├── tests/                             # Tests
 ├── pages/                             # Page Objects
+    ├──base/
+    └──components/
 ├── fixtures/                          # Playwright fixtures (https://playwright.dev/docs/test-fixtures)
 └── settings/                          # Settings
 ```
