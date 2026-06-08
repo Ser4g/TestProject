@@ -28,8 +28,8 @@ export const test = base.extend<TestFixtures>({
         const homePage = new HomePage(page);
         await homePage.navigateToHomePage();
         await homePage.expectWatchTvIsFocused();
-        await homePage.navigateToChannelPage();
-        await homePage.expectChannelMenuItemIsFocused();
+        await homePage.navigateToMainMenu();
+        await homePage.navigateToChannelsMenuItem();
         const popupPromise = page.waitForEvent('popup');
         await homePage.pressItem();
         await use(new ChannelPage(await popupPromise));

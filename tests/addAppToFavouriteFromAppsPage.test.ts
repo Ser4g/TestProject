@@ -5,8 +5,8 @@ test.describe('Add App to Favorites from Apps Page', () => {
     test.beforeEach(async ({ homePage }) => {
         await homePage.navigateToHomePage();
         await homePage.expectWatchTvIsFocused();
-        await homePage.navigateToAppsPage();
-        await homePage.expectAppsMenuItemIsFocused();
+        await homePage.navigateToMainMenu();
+        await homePage.navigateToAppsMenuItem();
         await homePage.pressItem();
     });
 

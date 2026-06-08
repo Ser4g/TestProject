@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-import { BasePage } from './BasePage';
 import { SEARCH_ACTION_CATEGORY_URL } from '../settings/urls';
+import { BasePage } from './base/BasePage';
 
 export class SearchPage extends BasePage {
     private readonly searchBar: Locator;

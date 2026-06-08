@@ -1,5 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { BasePage } from './base/BasePage';
 
 export class ChannelPage extends BasePage {
     private readonly playerOverlay: Locator;

@@ -5,8 +5,8 @@ test.describe('Open Category from Search Page', () => {
   test.beforeEach(async ({ homePage }) => {
     await homePage.navigateToHomePage();
     await homePage.expectWatchTvIsFocused();
-    await homePage.navigateToSearchPage();
-    await homePage.expectSearchMenuItemIsFocused();
+    await homePage.navigateToMainMenu();
+    await homePage.navigateToSearchMenuItem();
     await homePage.pressItem();
   });
 
