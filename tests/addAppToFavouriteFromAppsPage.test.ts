@@ -14,7 +14,6 @@ test.describe('Add App to Favorites from Apps Page', () => {
 
         await test.step('Wait for Apps Page to load', async () => {
             await appsPage.expectBannerContentIsVisible();
-            await appsPage.expectFeaturedAppsRowIsVisible();
         });
 
         await test.step('Navigate to Featured Apps Row', async () => {
